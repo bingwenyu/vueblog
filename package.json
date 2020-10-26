@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "axios": "^0.20.0",
-    "element-ui": "^2.13.2"
-  }
-}
