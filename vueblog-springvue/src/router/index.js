@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import BlogDetail from '../views/BlogDetail.vue'
 import BlogEdit from '../views/BlogEdit.vue'
-import Blog from '../views/Blogs.vue'
+import Blogs from '../views/Blogs.vue'
 Vue.use(VueRouter)
 const routes = [
   {

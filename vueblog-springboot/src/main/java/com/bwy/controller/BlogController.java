@@ -40,7 +40,7 @@ public class BlogController {
     }
 
     @GetMapping("/blog/{id}")
-    public Result detail(@PathVariable(name = "id") Long id) {
+    public Result detail(@PathVariable(name = "id") String id) {
         Blog blog = blogMapper.selectById(id);
         Assert.notNull(blog, "该博客已被删除");
 
@@ -56,14 +56,14 @@ public class BlogController {
             temp = blogMapper.selectById(blog.getId());
             // 只能编辑自己的文章
             //System.out.println(ShiroUtil.getProfile().getId());
-            Assert.isTrue(temp.getUserId().longValue() == ShiroUtil.getProfile().getId().longValue(), "没有权限编辑");
+            Assert.isTrue(temp.getUserId() == ShiroUtil.getProfile().getId().toString(), "没有权限编辑");
 
             //将blog中除了忽略字段之外的字段值赋值给temp
             BeanUtil.copyProperties(blog, temp, "id", "userId", "gmt_create", "status");
             blogMapper.updateById(temp);
         } else {
             temp = new Blog();
-            temp.setUserId(ShiroUtil.getProfile().getId());
+            temp.setUserId(ShiroUtil.getProfile().getId().toString());
             temp.setGmtCreate(LocalDateTime.now());
             temp.setStatus(0);
 

@@ -38,8 +38,10 @@ vueblog
 
 ### 项目效果
 
-登录页：
-![Image text](https://github.com/bwy-ppx/vueblog/blob/master/vueblog-springboot/src/main/resources/static/%E7%99%BB%E5%BD%95%E9%A1%B5.png)
+![Image text](https://github.com/bwy-ppx/vueblog/blob/master/vueblog-springboot/src/main/resources/static/main.png)
 
-发表博客：
-![Image text](https://github.com/bwy-ppx/vueblog/blob/master/vueblog-springboot/src/main/resources/static/%E5%8F%91%E8%A1%A8%E5%8D%9A%E5%AE%A2.png)
+![Image text](https://github.com/bwy-ppx/vueblog/blob/master/vueblog-springboot/src/main/resources/static/login.png)
+
+![Image text](https://github.com/bwy-ppx/vueblog/blob/master/vueblog-springboot/src/main/resources/static/detail.png)
+
+![Image text](https://github.com/bwy-ppx/vueblog/blob/master/vueblog-springboot/src/main/resources/static/edit.png)

@@ -3,7 +3,7 @@
 
     <el-container>
       <el-header>
-        <img class="mlogo" src="https://www.markerhub.com/dist/images/logo/markerhub-logo.png" alt="">
+          <el-avatar :size="60" src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"></el-avatar>
       </el-header>
       <el-main>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
@@ -15,7 +15,7 @@
           </el-form-item>
 
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
             <el-button @click="resetForm('ruleForm')">重置</el-button>
           </el-form-item>
         </el-form>
@@ -41,7 +41,7 @@
             { min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur' }
           ],
           password: [
-            { required: true, message: '请选择密码', trigger: 'change' }
+            { required: true, message: '请输入密码', trigger: 'change' }
           ]
         }
       };
@@ -52,14 +52,14 @@
           if (valid) {
             const _this = this
             this.$axios.post('/login', this.ruleForm).then(res => {
-              console.log(res.data)
+              //console.log(res.data)
               const jwt = res.headers['authorization']
               const userInfo = res.data.data
               // 把数据共享出去
               _this.$store.commit("SET_TOKEN", jwt)
               _this.$store.commit("SET_USERINFO", userInfo)
               // 获取
-              console.log(_this.$store.getters.getUser)
+              //console.log(_this.$store.getters.getUser)
               _this.$router.push("/blogs")
             })
           } else {

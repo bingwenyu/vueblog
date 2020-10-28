@@ -33,7 +33,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "主键ID")
-    private Long id;
+    private String id;
 
     @NotBlank(message = "昵称不能为空")
     @ApiModelProperty(value = "姓名")
