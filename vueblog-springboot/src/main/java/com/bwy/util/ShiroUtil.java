@@ -1,6 +1,6 @@
-package com.bwy.Util;
+package com.bwy.util;
 
-import com.bwy.Shiro.AccountProfile;
+import com.bwy.shiro.AccountProfile;
 import org.apache.shiro.SecurityUtils;
 
 public class ShiroUtil {

@@ -21,7 +21,6 @@ const routes = [
     name: 'Blogs',
     // 懒加载
     component: () => import('../views/Blogs.vue')
-    //component: Blog
   },
   {
     path: '/blog/add', // 注意放在 path: '/blog/:blogId'之前

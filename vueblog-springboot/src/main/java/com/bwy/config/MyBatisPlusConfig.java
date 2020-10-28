@@ -1,4 +1,4 @@
-package com.bwy.Config;
+package com.bwy.config;
 
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;

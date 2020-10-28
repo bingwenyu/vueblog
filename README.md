@@ -24,7 +24,8 @@ vueblog
 * 基础框架：Spring Boot 2.3.4.RELEASE
 * 持久层框架：Mybatis-plus_3.3.2
 * 安全框架：Apache Shiro 3.3.1，Jwt_0.9.0
-* 其他：Swagger-ui，lombok（简化代码）等
+* 缓存框架：redis
+* 其他：Swagger-ui，validation（实体校验），lombok（简化代码）等
 
 ### 前端
 

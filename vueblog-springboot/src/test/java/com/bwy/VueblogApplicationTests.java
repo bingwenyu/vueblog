@@ -1,7 +1,7 @@
 package com.bwy;
 
-import com.bwy.Generator.Entity.User;
-import com.bwy.Generator.Mapper.UserMapper;
+import com.bwy.entity.User;
+import com.bwy.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

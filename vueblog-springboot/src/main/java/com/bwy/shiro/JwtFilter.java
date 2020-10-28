@@ -1,8 +1,8 @@
-package com.bwy.Shiro;
+package com.bwy.shiro;
 
 import cn.hutool.json.JSONUtil;
-import com.bwy.Common.Lang.Result;
-import com.bwy.Util.JwtUtils;
+import com.bwy.common.lang.Result;
+import com.bwy.util.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;

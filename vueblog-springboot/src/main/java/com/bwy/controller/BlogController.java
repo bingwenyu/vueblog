@@ -1,13 +1,13 @@
-package com.bwy.Controller;
+package com.bwy.controller;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.bwy.Common.Lang.Result;
-import com.bwy.Generator.Entity.Blog;
-import com.bwy.Generator.Mapper.BlogMapper;
-import com.bwy.Util.ShiroUtil;
+import com.bwy.common.lang.Result;
+import com.bwy.entity.Blog;
+import com.bwy.mapper.BlogMapper;
+import com.bwy.util.ShiroUtil;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
@@ -28,7 +28,6 @@ import java.time.LocalDateTime;
 public class BlogController {
 
     @Autowired
-    //BlogService blogService;
     BlogMapper blogMapper;
 
     @GetMapping("/blogs")
@@ -51,25 +50,27 @@ public class BlogController {
     @RequiresAuthentication
     @PostMapping("/blog/edit")
     public Result edit(@Validated @RequestBody Blog blog) {
-
-//        Assert.isTrue(false, "公开版不能任意编辑！");
-
+        //Assert.isTrue(false, "公开版不能任意编辑！");
         Blog temp = null;
         if(blog.getId() != null) {
             temp = blogMapper.selectById(blog.getId());
             // 只能编辑自己的文章
-            System.out.println(ShiroUtil.getProfile().getId());
+            //System.out.println(ShiroUtil.getProfile().getId());
             Assert.isTrue(temp.getUserId().longValue() == ShiroUtil.getProfile().getId().longValue(), "没有权限编辑");
 
+            //将blog中除了忽略字段之外的字段值赋值给temp
+            BeanUtil.copyProperties(blog, temp, "id", "userId", "gmt_create", "status");
+            blogMapper.updateById(temp);
         } else {
             temp = new Blog();
             temp.setUserId(ShiroUtil.getProfile().getId());
             temp.setGmtCreate(LocalDateTime.now());
             temp.setStatus(0);
-        }
 
-        BeanUtil.copyProperties(blog, temp, "id", "userId", "gmt_create", "status");
-        blogMapper.update(temp,null);
+            //将blog中除了忽略字段之外的字段值赋值给temp
+            BeanUtil.copyProperties(blog, temp, "id", "userId", "gmt_create", "status");
+            blogMapper.insert(temp);
+        }
 
         return Result.succ(null);
     }

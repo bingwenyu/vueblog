@@ -1,6 +1,6 @@
-package com.bwy.Generator.Mapper;
+package com.bwy.mapper;
 
-import com.bwy.Generator.Entity.Blog;
+import com.bwy.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @since 2020-10-21
  */
 @Repository
-public interface BlogMapper extends BaseMapper<Blog> {
+public interface UserMapper extends BaseMapper<User> {
 
 }

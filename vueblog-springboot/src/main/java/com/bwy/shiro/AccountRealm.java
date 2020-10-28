@@ -1,9 +1,9 @@
-package com.bwy.Shiro;
+package com.bwy.shiro;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.bwy.Generator.Entity.User;
-import com.bwy.Generator.Mapper.UserMapper;
-import com.bwy.Util.JwtUtils;
+import com.bwy.entity.User;
+import com.bwy.mapper.UserMapper;
+import com.bwy.util.JwtUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;

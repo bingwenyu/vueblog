@@ -1,4 +1,4 @@
-package com.bwy.Generator.Entity;
+package com.bwy.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.Version;
@@ -11,6 +11,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 /**
  * <p>
@@ -31,15 +35,19 @@ public class User implements Serializable {
     @ApiModelProperty(value = "主键ID")
     private Long id;
 
+    @NotBlank(message = "昵称不能为空")
     @ApiModelProperty(value = "姓名")
     private String username;
 
     @ApiModelProperty(value = "头像")
     private String avatar;
 
+    @NotBlank(message = "邮箱不能为空")
+    @Email(message = "邮箱格式不正确")
     @ApiModelProperty(value = "邮箱")
     private String email;
 
+    @NotBlank(message = "密码不能为空")
     @ApiModelProperty(value = "密码")
     private String password;
 

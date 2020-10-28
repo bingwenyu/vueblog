@@ -1,22 +1,19 @@
-package com.bwy.Controller;
+package com.bwy.controller;
 
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.bwy.Common.Dto.LoginDto;
-import com.bwy.Common.Lang.Result;
-import com.bwy.Generator.Entity.User;
-import com.bwy.Generator.Mapper.UserMapper;
-import com.bwy.Util.JwtUtils;
+import com.bwy.common.dto.LoginDto;
+import com.bwy.common.lang.Result;
+import com.bwy.entity.User;
+import com.bwy.mapper.UserMapper;
+import com.bwy.util.JwtUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 

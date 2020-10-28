@@ -1,6 +1,6 @@
-package com.bwy.Common.Exception;
+package com.bwy.common.exception;
 
-import com.bwy.Common.Lang.Result;
+import com.bwy.common.lang.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
 import org.springframework.http.HttpStatus;

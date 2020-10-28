@@ -1,4 +1,4 @@
-package com.bwy.Generator.Entity;
+package com.bwy.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 
@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * <p>
@@ -31,12 +33,16 @@ public class Blog implements Serializable {
     @ApiModelProperty(value = "用户ID")
     private Long userId;
 
+    @NotBlank(message = "标题不能为空")
     @ApiModelProperty(value = "标题")
     private String title;
 
-    @ApiModelProperty(value = "描述")
+    @NotBlank(message = "摘要不能为空")
+    @ApiModelProperty(value = "摘要")
     private String description;
 
+    @NotBlank(message = "内容不能为空")
+    @ApiModelProperty(value = "内容")
     private String content;
 
     @ApiModelProperty(value = "状态")

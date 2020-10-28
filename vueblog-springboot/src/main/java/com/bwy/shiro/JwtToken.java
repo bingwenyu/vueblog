@@ -1,4 +1,4 @@
-package com.bwy.Shiro;
+package com.bwy.shiro;
 
 import org.apache.shiro.authc.AuthenticationToken;
 

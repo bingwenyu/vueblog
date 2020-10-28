@@ -1,4 +1,4 @@
-package com.bwy.Common.Lang;
+package com.bwy.common.lang;
 
 import lombok.Data;
 

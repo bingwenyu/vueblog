@@ -1,7 +1,7 @@
-package com.bwy.Config;
+package com.bwy.config;
 
-import com.bwy.Shiro.AccountRealm;
-import com.bwy.Shiro.JwtFilter;
+import com.bwy.shiro.AccountRealm;
+import com.bwy.shiro.JwtFilter;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;

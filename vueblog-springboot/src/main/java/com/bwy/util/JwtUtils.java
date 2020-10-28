@@ -1,4 +1,4 @@
-package com.bwy.Util;
+package com.bwy.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -1,4 +1,4 @@
-package com.bwy.Config;
+package com.bwy.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
